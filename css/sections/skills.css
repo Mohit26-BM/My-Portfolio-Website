@@ -1,0 +1,148 @@
+/* ============================================================
+   SKILLS SECTION
+   ============================================================ */
+
+#skills {
+  background: #f9f9f9;
+  padding-top: 60px;
+}
+
+.skills-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.skill-group {
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  padding: 32px 28px;
+}
+
+.skill-group h3 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Skill Pills Container */
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Flip Card Container */
+.skill-card {
+  perspective: 1000px;
+  min-width: 135px;
+  max-width: 150px;
+  height: 44px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+}
+
+.skill-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-out;
+  transform-style: preserve-3d;
+}
+
+.skill-card:hover .skill-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.skill-card-front,
+.skill-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Front Face */
+.skill-card-front {
+  background: #f5f5f5;
+  border: 1.5px solid var(--rule);
+  color: var(--ink);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-card-front {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent);
+}
+
+/* Back Face */
+.skill-card-back {
+  background: var(--accent);
+  color: white;
+  border: 1.5px solid var(--accent);
+  transform: rotateY(180deg);
+  font-size: 11px;
+}
+
+/* Subtle Animation on Scroll Reveal */
+.reveal.visible .skill-card {
+  animation: fadeInPill 0.4s ease forwards;
+  opacity: 0;
+}
+
+.reveal.visible .skill-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.reveal.visible .skill-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.reveal.visible .skill-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.reveal.visible .skill-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.reveal.visible .skill-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInPill {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

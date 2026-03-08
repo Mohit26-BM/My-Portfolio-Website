@@ -1,0 +1,32 @@
+/* ============================================================
+   PORTFOLIO STYLES - MODULAR ENTRY POINT
+   
+   This file imports all modular CSS files for a clean,
+   maintainable, and scalable stylesheet architecture.
+   ============================================================ */
+
+/* Core Variables */
+@import url('./variables.css');
+
+/* Base & Global */
+@import url('./base.css');
+
+/* Utilities & Animations */
+@import url('./utilities.css');
+
+/* Reusable Components */
+@import url('./components/navigation.css');
+@import url('./components/buttons.css');
+@import url('./components/forms.css');
+
+/* Section Styles */
+@import url('./sections/hero.css');
+@import url('./sections/about.css');
+@import url('./sections/projects.css');
+@import url('./sections/skills.css');
+@import url('./sections/experience.css');
+@import url('./sections/contact.css');
+@import url('./sections/footer.css');
+
+/* Responsive Design */
+@import url('./responsive.css');

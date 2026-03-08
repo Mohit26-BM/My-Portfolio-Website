@@ -1,0 +1,75 @@
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  #hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    display: none;
+  }
+
+  section {
+    padding: 80px 40px;
+  }
+
+  nav {
+    padding: 16px 24px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .card-img {
+    height: 240px;
+  }
+
+  .card-info {
+    border-left: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  .skills-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card-front,
+  .skill-card-back {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .skill-card-back {
+    font-size: 9px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  section {
+    padding: 60px 24px;
+  }
+
+  footer {
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

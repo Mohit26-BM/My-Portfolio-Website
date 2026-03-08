@@ -1,0 +1,68 @@
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+
+#about {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+#about .section-header {
+  border-color: rgba(247, 243, 236, 0.15);
+}
+
+#about .section-num {
+  color: var(--accent);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(247, 243, 236, 0.75);
+  margin-bottom: 24px;
+}
+
+.about-text p strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.about-text em {
+  color: var(--accent);
+  font-style: italic;
+  font-family: var(--serif);
+  font-size: 1.05em;
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar-item {
+  border-left: 2px solid var(--accent);
+  padding-left: 20px;
+}
+
+.sidebar-item h4 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 236, 0.4);
+  margin-bottom: 8px;
+}
+
+.sidebar-item p {
+  font-size: 15px;
+  color: rgba(247, 243, 236, 0.8);
+  line-height: 1.5;
+}

@@ -1,0 +1,75 @@
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+
+#contact {
+  background: var(--ink);
+  color: var(--paper);
+  padding-bottom: 80px;
+}
+
+#contact .section-title {
+  color: var(--paper);
+}
+
+#contact .section-header {
+  border-color: rgba(247, 243, 236, 0.12);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.contact-left h3 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: rgba(247, 243, 236, 0.85);
+}
+
+.contact-left p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(247, 243, 236, 0.5);
+  margin-bottom: 40px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: rgba(247, 243, 236, 0.6);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: var(--accent);
+}
+
+.social-link span.icon {
+  color: var(--accent);
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.social-link span.icon svg {
+  width: 100%;
+  height: 100%;
+}

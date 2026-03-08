@@ -1,0 +1,340 @@
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+
+#projects {
+  background: var(--paper);
+  padding-bottom: 60px;
+}
+
+.project-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border: 1.5px solid var(--rule);
+  background: transparent;
+  color: var(--muted);
+  cursor: none;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* Deck Shell */
+.deck-shell {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Counter + Navigation Row */
+.deck-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.deck-counter {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.deck-counter strong {
+  color: var(--accent);
+}
+
+.deck-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.deck-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.deck-btn:hover {
+  background: var(--accent);
+  transform: scale(1.08);
+}
+
+.deck-btn:disabled {
+  background: var(--rule);
+  color: var(--muted);
+  transform: none;
+}
+
+/* Viewport — Clips the card */
+.deck-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Individual Card */
+.project-card {
+  background: var(--paper2);
+  border: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease;
+}
+
+/* Static placeholder height so viewport doesn't collapse */
+.deck-viewport::after {
+  content: '';
+  display: block;
+  padding-top: 0;
+  min-height: 0;
+}
+
+/* Slide States */
+.project-card.card-current {
+  transform: translateX(0);
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.project-card.card-enter-right {
+  transform: translateX(110%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.project-card.card-enter-left {
+  transform: translateX(-110%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.project-card.card-exit-left {
+  transform: translateX(-110%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.project-card.card-exit-right {
+  transform: translateX(110%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.project-card.card-hidden {
+  display: none;
+}
+
+/* Hover Lift on Current Card */
+.project-card.card-current {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.project-card.card-current:hover {
+  box-shadow: 0 20px 48px rgba(14, 13, 11, 0.12), 4px 4px 0 var(--accent);
+}
+
+/* Accent Sweep on Hover */
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Image Pane */
+.card-img {
+  overflow: hidden;
+  background: var(--paper2);
+  height: 100%;
+  min-height: 280px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .card-img img {
+  transform: scale(1.04);
+}
+
+.card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(247, 243, 236, 0.2);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.card-img-placeholder span:first-child {
+  font-size: 32px;
+  opacity: 0.25;
+}
+
+/* Info Pane */
+.card-info {
+  padding: 36px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--rule);
+}
+
+.card-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 10px;
+  background: var(--rule);
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.card-links {
+  display: flex;
+  gap: 16px;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.card-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.card-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s;
+}
+
+.card-links a:hover {
+  color: var(--accent);
+}
+
+.card-links a:hover::after {
+  width: 100%;
+}
+
+.card-links .link-disabled {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+/* Dots */
+.deck-dots {
+  display: none;
+}
+
+.deck-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--rule);
+  cursor: none;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  padding: 0;
+}
+
+.deck-dot.active {
+  background: var(--accent);
+  transform: scale(1.35);
+}

@@ -1,0 +1,64 @@
+/* ============================================================
+   FORMS
+   ============================================================ */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 236, 0.4);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(247, 243, 236, 0.05);
+  border: 1px solid rgba(247, 243, 236, 0.12);
+  color: var(--paper);
+  padding: 14px 16px;
+  font-family: var(--sans);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-group textarea {
+  min-height: 120px;
+}
+
+.btn-send {
+  background: var(--accent);
+  color: var(--paper);
+  border: none;
+  padding: 16px 40px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: none;
+  align-self: flex-start;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-send:hover {
+  background: #a83214;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,18 @@
+/* ============================================================
+   DESIGN TOKENS & VARIABLES
+   ============================================================ */
+
+:root {
+  --ink:    #0e0d0b;
+  --paper:  #f7f3ec;
+  --paper2: #efe9df;
+  --accent: #c8401a;
+  --accent2:#1a5c8f;
+  --muted:  #7a736a;
+  --rule:   #d4ccc0;
+  
+  /* Typography */
+  --mono:   'DM Mono', monospace;
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'Instrument Sans', sans-serif;
+}

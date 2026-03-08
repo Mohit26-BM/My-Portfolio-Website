@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohit Bali — Portfolio</title>
+
+  <link rel="icon" href="favicon.svg?v=20260308b" type="image/svg+xml" sizes="any">
+  <link rel="shortcut icon" href="favicon.svg?v=20260308b" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">MB<span>.</span>ds</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Data Scientist &amp; ML Engineer</p>
+    <h1 class="hero-name">Mohit<br><em>Bali</em></h1>
+    <p class="hero-desc">
+      I build end-to-end ML systems — from handling class imbalance with SMOTE to
+      deploying transformer-based recommendation engines on Hugging Face.
+      Every model I train ships with a live URL.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact"  class="btn-secondary">Get in Touch</a>
+      <a href="resume.pdf" download class="btn-secondary">Download Resume</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-grid-vis"></div>
+    <div class="terminal-container">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="term-btn term-close"></span>
+            <span class="term-btn term-min"></span>
+            <span class="term-btn term-max"></span>
+          </div>
+          <div class="terminal-title">portfolio.py</div>
+        </div>
+        <div class="terminal-body">
+          <div id="terminalCode"></div>
+          <div id="terminalOutput"></div>
+          <span class="terminal-cursor"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About Me</h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>
+        I'm a <strong>final-year Computer Science student</strong> at Lovely Professional University,
+        focused on Machine Learning and Data Science.
+      </p>
+      <p>
+        I build practical ML and web projects and like taking ideas from concept to a working product.
+      </p>
+      <p>
+        I enjoy solving real problems, learning new tools, and improving a little with every project.
+        I'm currently looking for opportunities where I can contribute, learn, and grow with a strong team.
+      </p>
+    </div>
+
+    <div class="about-sidebar">
+      <div class="sidebar-item">
+        <h4>Education</h4>
+        <p>B.Tech Computer Science &amp; Engineering<br>Lovely Professional University<br>CGPA: 7.65 · 2022–2026</p>
+      </div>
+      <div class="sidebar-item">
+        <h4>Location</h4>
+        <p>Phagwara, Punjab, India<br>Open to remote &amp; relocation</p>
+      </div>
+      <div class="sidebar-item">
+        <h4>Mobile</h4>
+        <p>+91-8799773685</p>
+      </div>
+      <div class="sidebar-item">
+        <h4>Looking For</h4>
+        <p>Data Science / ML roles<br>Graduating May 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS — SWIPEABLE CAROUSEL
+============================================================ -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Projects</h2>
+  </div>
+
+  <!-- Filters -->
+  <div class="project-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+    <button class="filter-btn" data-filter="nlp">NLP / GenAI</button>
+    <button class="filter-btn" data-filter="web">Web / Tools</button>
+  </div>
+
+  <!-- Deck -->
+  <div class="deck-shell">
+    <div class="deck-nav">
+      <span class="deck-counter"><strong id="deckCurrent">1</strong> / <span id="deckTotal">9</span></span>
+      <div class="deck-arrows">
+        <button class="deck-btn" id="deckPrev">&#8592;</button>
+        <button class="deck-btn" id="deckNext">&#8594;</button>
+      </div>
+    </div>
+    <div class="deck-viewport" id="deckViewport">
+      <!-- Cards injected by main.js -->
+    </div>
+    <div class="deck-dots" id="deckDots"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS
+============================================================ -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Skills</h2>
+  </div>
+  <div class="skills-layout reveal">
+
+    <div class="skill-group">
+      <h3>Languages &amp; Core</h3>
+      <div class="skill-pills">
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Python</div>
+            <div class="skill-card-back">Core language</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">SQL</div>
+            <div class="skill-card-back">Querying</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">R</div>
+            <div class="skill-card-back">Statistics</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">JavaScript</div>
+            <div class="skill-card-back">Web apps</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">HTML/CSS</div>
+            <div class="skill-card-back">Frontend</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Git</div>
+            <div class="skill-card-back">Version control</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>ML &amp; Modeling</h3>
+      <div class="skill-pills">
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">scikit-learn</div>
+            <div class="skill-card-back">ML library</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">NLP</div>
+            <div class="skill-card-back">Text analysis</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Regression</div>
+            <div class="skill-card-back">Prediction</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Classification</div>
+            <div class="skill-card-back">ML task</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Random Forest</div>
+            <div class="skill-card-back">Ensemble</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">XGBoost</div>
+            <div class="skill-card-back">Boosting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Data &amp; Visualization</h3>
+      <div class="skill-pills">
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Pandas</div>
+            <div class="skill-card-back">Data wrangling</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">NumPy</div>
+            <div class="skill-card-back">Arrays</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Matplotlib</div>
+            <div class="skill-card-back">Plotting</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Excel</div>
+            <div class="skill-card-back">Spreadsheets</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">EDA</div>
+            <div class="skill-card-back">Analysis</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Tableau</div>
+            <div class="skill-card-back">Dashboards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Tools &amp; Deployment</h3>
+      <div class="skill-pills">
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Flask</div>
+            <div class="skill-card-back">Web APIs</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">MySQL</div>
+            <div class="skill-card-back">Database</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Supabase</div>
+            <div class="skill-card-back">Auth + Postgres</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Django</div>
+            <div class="skill-card-back">Web framework</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Render</div>
+            <div class="skill-card-back">Deployment</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">Netlify</div>
+            <div class="skill-card-back">Hosting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION / TIMELINE
+============================================================ -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Education</h2>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Aug 2022 — May 2026</div>
+      <h3 class="timeline-title">B.Tech — Computer Science &amp; Engineering</h3>
+      <div class="timeline-org">Lovely Professional University · Phagwara, Punjab</div>
+      <ul class="timeline-body">
+        <li>CGPA: 7.65 · Specialisation in Data Science</li>
+        <li>Built and deployed multiple end-to-end ML and web projects during coursework</li>
+        <li>Core coursework: Machine Learning, Data Structures &amp; Algorithms, DBMS, OS, Computer Networks</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 2019 — Jul 2020</div>
+      <h3 class="timeline-title">Senior Secondary (XII) — Science (PCM)</h3>
+      <div class="timeline-org">Blue Bird Senior Secondary School · Faridabad, Haryana</div>
+      <ul class="timeline-body">
+        <li>Percentage: 76.8%</li>
+        <li>Subjects: Physics, Chemistry, Mathematics</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 2017 — Jul 2018</div>
+      <h3 class="timeline-title">Secondary (X)</h3>
+      <div class="timeline-org">Shri Guru Teg Bahadur School · Faridabad, Haryana</div>
+      <ul class="timeline-body">
+        <li>Percentage: 85.6%</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Get in Touch</h2>
+  </div>
+  <div class="contact-layout reveal">
+
+    <div class="contact-left">
+      <h3>Let's build something that matters.</h3>
+      <p>I'm actively looking for Data Science and ML roles graduating May 2026.
+         Happy to connect about internships, full-time opportunities, collaborations,
+         or just to talk about interesting ML problems.</p>
+      <div class="social-links">
+        <a href="mailto:M26ohitbali@gmail.com" class="social-link"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg></span> M26ohitbali@gmail.com</a>
+        <a href="https://github.com/Mohit26-BM" target="_blank" rel="noopener noreferrer" class="social-link"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.59 2 12.24c0 4.51 2.87 8.34 6.84 9.69.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.62-3.37-1.2-3.37-1.2-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.85.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.05A9.35 9.35 0 0 1 12 6.84c.85 0 1.7.12 2.5.36 1.9-1.32 2.74-1.05 2.74-1.05.56 1.4.21 2.44.1 2.7.65.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.81-4.58 5.07.36.32.69.95.69 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.24C22 6.59 17.52 2 12 2Z"></path></svg></span> github.com/Mohit26-BM</a>
+        <a href="https://linkedin.com/in/mohit26bali" target="_blank" rel="noopener noreferrer" class="social-link"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5v11H3.5v-11h3.44ZM5.22 3A2 2 0 1 0 5.2 7a2 2 0 0 0 .02-4ZM20.5 12.97v6.53h-3.42v-6.14c0-1.55-.55-2.6-1.94-2.6-1.05 0-1.68.72-1.95 1.42-.1.25-.13.61-.13.96v6.36H9.64s.05-10.32 0-11h3.42v1.56c.45-.7 1.27-1.7 3.1-1.7 2.26 0 3.96 1.52 3.96 4.8Z"></path></svg></span> linkedin.com/in/mohit26bali</a>
+        <a href="tel:+918799773685" class="social-link"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v2.2a2 2 0 0 1-2.18 2 19.73 19.73 0 0 1-8.6-3.06 19.4 19.4 0 0 1-6-6A19.73 19.73 0 0 1 2.18 3.4 2 2 0 0 1 4.16 1.2h2.2a2 2 0 0 1 2 1.72c.12.9.33 1.8.62 2.67a2 2 0 0 1-.45 2.11l-.93.93a16 16 0 0 0 6 6l.93-.93a2 2 0 0 1 2.11-.45c.87.29 1.77.5 2.67.62a2 2 0 0 1 1.72 2Z"></path></svg></span> +91-8799773685</a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="e98bec84-ca81-408e-99cb-aa6c6d3e3210">
+        
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="Jane Smith" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="jane@company.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" name="subject" placeholder="Job opportunity / Collaboration / Other">
+        </div>
+        
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell me about the project, role, or idea..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-send">Send Message →</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Mohit Bali. Built with HTML, CSS &amp; intention.</p>
+  <p>Data Science &amp; ML Portfolio</p>
+</footer>
+
+<!-- Script (modular entry point) -->
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

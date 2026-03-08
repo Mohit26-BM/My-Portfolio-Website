@@ -1,0 +1,19 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  background: var(--ink);
+  padding: 28px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(247, 243, 236, 0.08);
+}
+
+footer p {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(247, 243, 236, 0.3);
+  letter-spacing: 0.06em;
+}
