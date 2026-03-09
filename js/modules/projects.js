@@ -33,7 +33,7 @@ const PROJECTS = [
     tags: ["R Shiny", "ML", "Classification", "Regression"],
     category: "ml",
     img: "images/compass.png",
-    github: "https://github.com/Mohit26-BM/Global-Compass",
+    github: "https://github.com/Mohit26-BM/Global-Compass-R",
     live: "https://datavizs.shinyapps.io/global-compass/",
   },
   {
@@ -63,8 +63,8 @@ const PROJECTS = [
     tags: ["JavaScript", "Supabase", "PostgreSQL", "Chart.js"],
     category: "web",
     img: "images/library.png",
-    github: "",
-    live: "",
+    github: "https://github.com/Mohit26-BM/Bibliotheca",
+    live: "https://the-bibliotheca.netlify.app/",
   },
 
   // ADDITIONAL PROJECTS (Show More)
