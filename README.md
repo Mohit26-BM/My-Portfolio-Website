@@ -6,7 +6,7 @@ A modern, interactive portfolio showcasing Machine Learning, Data Science, and W
 
 This is a fully responsive portfolio website built with vanilla HTML, CSS, and JavaScript. It features a clean notebook-inspired design, smooth animations, and an interactive project carousel.
 
-**Live Site:** [Add your deployed URL here]
+**Live Site:** [https://mohit26portfolio.netlify.app/]
 
 ## Features
 
